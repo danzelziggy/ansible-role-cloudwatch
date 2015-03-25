@@ -2,3 +2,5 @@
 # defaults file for cloudwatch
 pkgs:
   - libdatetime-perl
+  - unzip
+  - libwww-perl

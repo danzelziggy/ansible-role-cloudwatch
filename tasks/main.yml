@@ -6,4 +6,9 @@
   apt:
     name: "{{ item }}"
     state: present
-  with_items: pkgs
+  with_items: cloudwatch_pkgs
+- name: download cloudwatch scripts
+  get_url:
+    url: "{{ cloudwatch_scripts }}"
+    dest: "/home/{{ owner }}"
+    mode: 0755

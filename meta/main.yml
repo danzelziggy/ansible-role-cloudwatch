@@ -6,7 +6,7 @@ galaxy_info:
   min_ansible_version: 1.7
   platforms:
     - name: Ubuntu
-       versions:
+      versions:
         - precise
         - trusty
   categories:

@@ -33,3 +33,5 @@
     job: "{{ item }}"
   run_once: true
   with_items: cloudwatch_cronjobs
+
+include: awslogs

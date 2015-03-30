@@ -4,7 +4,6 @@ cloudwatch_pkgs:
   - libdatetime-perl
   - unzip
   - libwww-perl
-  - awscli
   - python-pip
 
 cloudwatch_pip_pkgs:

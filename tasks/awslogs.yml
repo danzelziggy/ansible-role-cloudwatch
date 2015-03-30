@@ -1,0 +1,8 @@
+- name: get awslogs-agent setup
+  get_url:
+    url: "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py"
+    dest: "/home/{{ owner }}"
+- name: run setup.py
+  command: "sudo python ./awslogs-agent-setup.py --region {{ aws_region }}"
+  args:
+    chdir: "/home/{{ owner }}"

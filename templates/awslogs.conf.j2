@@ -1,8 +1,8 @@
 [general]
 state_file = /var/awslogs/state/agent-state
 
-{% for log in aws['logs'] %}
-[/var/log/syslog]
+{% for log in cloudwatch_aws['logs'] %}
+[{{ log.name }}]
 datetime_format = {{ log.datetime_format }}
 file = {{ log.file }}
 buffer_duration = {{ log.buffer_duration }}

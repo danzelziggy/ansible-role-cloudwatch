@@ -3,7 +3,7 @@
     url: "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py"
     dest: "/home/{{ owner }}"
 - name: run setup.py
-command: "sudo python ./awslogs-agent-setup.py -n --region {{ aws_region }}" -c /var/log/syslog
+  command: "sudo python ./awslogs-agent-setup.py -n --region {{ aws_region }} -c /var/log/syslog"
   args:
     chdir: "/home/{{ owner }}"
 - name: Make sure the AWS Logs config is present

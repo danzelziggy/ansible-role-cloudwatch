@@ -1,0 +1,12 @@
+[general]
+state_file = /var/awslogs/state/agent-state
+
+{% for log in aws['logs'] %}
+[/var/log/syslog]
+datetime_format = {{ log.datetime_format }}
+file = {{ log.file }}
+buffer_duration = {{ log.buffer_duration }}
+log_stream_name = {{ log.log_stream_name }}
+initial_position = {{ log.initial_position }}
+log_group_name = {{ log.log_group_name }}
+{% endfor%}

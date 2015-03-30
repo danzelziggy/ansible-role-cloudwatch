@@ -7,6 +7,10 @@
     name: "{{ item }}"
     state: present
   with_items: cloudwatch_pkgs
+- name:  Install pip pkgs
+  pip:
+    name: "{{ item }}"
+  with_items: cloudwatch_pip_pkgs
 - name: download cloudwatch scripts
   get_url:
     url: "{{ cloudwatch_scripts }}"

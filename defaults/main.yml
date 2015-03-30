@@ -5,6 +5,10 @@ cloudwatch_pkgs:
   - unzip
   - libwww-perl
   - awscli
+  - python-pip
+
+cloudwatch_pip_pkgs:
+  - awscli
 
 cloudwatch_scripts: http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
 

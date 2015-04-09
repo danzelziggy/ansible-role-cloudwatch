@@ -10,4 +10,4 @@
   template:
     src: awslogs.conf.j2
     dest: /var/awslogs/etc/awslogs.conf
-  notify: start awslogs
+  notify: restart awslogs

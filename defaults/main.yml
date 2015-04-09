@@ -13,6 +13,7 @@ cloudwatch_scripts: http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchM
 
 cloudwatch_cronjobs:
   - /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --mem-util > /home/ubuntu/test
+  - /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --disk-space-util --disk-path=/ --from-cron
 
 cloudwatch_aws:
   logs:
@@ -29,6 +30,6 @@ cloudwatch_aws:
       file: /var/log/auth.log
       datetime_format: "%Y-%m-%d %H:%M:%S"
       buffer_duration: 5000
-      log_stream_name: "test.log"
+      log_stream_name: "auth.log"
       initial_position: start_of_file
       log_group_name: /var/log/auth.log

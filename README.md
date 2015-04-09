@@ -3,6 +3,8 @@ Role Name
 
 Installs and configures CloudWatch for EC2
 
+cloudwatch_cronjobs are run every 5 minutes by default.
+
 Requirements
 ------------
 

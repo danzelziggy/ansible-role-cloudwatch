@@ -23,15 +23,14 @@
     dest: "/home/{{ owner }}/"
 - name: Loop through cron jobs
   cron:
-    name: "create a file in the home dir"
+    name: "{{ item.name }}"
     state: present
     user: "{{ owner }}"
     minute: "*/5"
     hour: "*"
     month: "*"
     weekday: "*"
-    job: "{{ item }}"
-  run_once: true
+    job: "{{ item.script }}"
   with_items: cloudwatch_cronjobs
 
 - include: awslogs.yml

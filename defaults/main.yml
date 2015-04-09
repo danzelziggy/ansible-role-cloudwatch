@@ -12,8 +12,12 @@ cloudwatch_pip_pkgs:
 cloudwatch_scripts: http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
 
 cloudwatch_cronjobs:
-  - /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --mem-util > /home/ubuntu/test
-  - /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --disk-space-util --disk-path=/ --from-cron
+  -
+    name: memory utilization
+    script: /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --mem-util --from-cron
+  -
+    name: disk space utilization
+    script: /home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --disk-space-util --disk-path=/ --from-cron
 
 cloudwatch_aws:
   logs:

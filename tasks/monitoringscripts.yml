@@ -1,0 +1,22 @@
+- name: download cloudwatch scripts
+  get_url:
+    url: "{{ cloudwatch_scripts }}"
+    dest: "/home/{{ owner }}/cloudwatch.zip"
+    mode: 0755
+- name: unzip cloudwatch scripts
+  unarchive:
+    copy: no
+    src: "/home/{{ owner }}/cloudwatch.zip"
+    dest: "/home/{{ owner }}/"
+    creates: "/home/{{ onwer }}/aws-scripts-mon"
+- name: Loop through cron jobs
+  cron:
+    name: "{{ item.name }}"
+    state: present
+    user: "{{ owner }}"
+    minute: "*/5"
+    hour: "*"
+    month: "*"
+    weekday: "*"
+    job: "{{ item.script }}"
+  with_items: cloudwatch_cronjobs

@@ -6,6 +6,7 @@
   command: "sudo python ./awslogs-agent-setup.py -n --region {{ aws_region }} -c /var/log/syslog"
   args:
     chdir: "/home/{{ owner }}"
+    creates: "/var/awslogs/etc/awslogs.conf"
 - name: Make sure the AWS Logs config is present
   template:
     src: awslogs.conf.j2

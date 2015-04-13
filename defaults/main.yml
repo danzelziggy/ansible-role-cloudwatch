@@ -1,4 +1,7 @@
 ---
+owner: ubuntu
+group: ubuntu
+
 # defaults file for cloudwatch
 cloudwatch_pkgs:
   - libdatetime-perl

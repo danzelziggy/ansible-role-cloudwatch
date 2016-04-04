@@ -8,7 +8,7 @@
     copy: no
     src: "/home/{{ owner }}/cloudwatch.zip"
     dest: "/home/{{ owner }}/"
-    creates: "/home/{{ onwer }}/aws-scripts-mon"
+    creates: "/home/{{ owner }}/aws-scripts-mon"
 - name: Loop through cron jobs
   cron:
     name: "{{ item.name }}"
